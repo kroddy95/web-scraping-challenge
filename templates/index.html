@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+  </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Latest Mars News</h1>
+                <h3>{{mars_data.news_title }}</h3>
+                <p>{{ mars_data.news_p }}<hr></p>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Featured Mars Images</h3>
+                <img src="{{ mars_data.featured_image_url }}" alt="Featured Image" width="500px">
+            </div>
+            <div class="col-md-4">
+                <h3>Mars Facts</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                      <thead class="thead-light">
+                        <tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Equatorial Diameter:</th>
+                            <td>6,792 km</td>
+                          </tr>
+                          <tr>
+                            <th>Polar Diameter:</th>
+                            <td>6,752 km</td>
+                          </tr>
+                          <tr>
+                            <th>Mass:</th>
+                            <td>6.39 × 10^23 kg (0.11 Earths)</td>
+                          </tr>
+                          <tr>
+                            <th>Moons:</th>
+                            <td>2 (Phobos &amp; Deimos)</td>
+                          </tr>
+                          <tr>
+                            <th>Orbit Distance:</th>
+                            <td>227,943,824 km (1.38 AU)</td>
+                          </tr>
+                          <tr>
+                            <th>Orbit Period:</th>
+                            <td>687 days (1.9 years)</td>
+                          </tr>
+                          <tr>
+                            <th>Surface Temperature:</th>
+                            <td>-87 to -5 °C</td>
+                          </tr>
+                          <tr>
+                            <th>First Record:</th>
+                            <td>2nd millennium BC</td>
+                          </tr>
+                          <tr>
+                            <th>Recorded By:</th>
+                            <td>Egyptian astronomers</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                <h1 class="text-center">Mars Hemispheres<hr></h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <img src="{{ mars_data.hemisphere_image_urls[0].img_url }}" class="figure-img img-fluid rounded" width="500px">
+                            <figcaption class="figure-caption text-left">{{ mars_data.hemisphere_image_urls[0].title }}</figcaption><br><br>
+                          </div>
+                          <div class="col-lg-6">
+                            <img src="{{ mars_data.hemisphere_image_urls[1].img_url }}" class="figure-img img-fluid rounded" width="500px">
+                            <figcaption class="figure-caption text-left">{{ mars_data.hemisphere_image_urls[1].title }}</figcaption><br><br>
+                          </div>
+                        </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                                <img src="{{ mars_data.hemisphere_image_urls[2].img_url }}" class="figure-img img-fluid rounded" width="500px">
+                                <figcaption class="figure-caption text-left">{{ mars_data.hemisphere_image_urls[2].title }}</figcaption><br><br>
+                              </div>
+                              <div class="col-lg-6">
+                                <img src="{{ mars_data.hemisphere_image_urls[3].img_url }}" class="figure-img img-fluid rounded" width="500px">
+                                <figcaption class="figure-caption text-left" size="18">{{ mars_data.hemisphere_image_urls[3].title }}</figcaption><br><br>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
