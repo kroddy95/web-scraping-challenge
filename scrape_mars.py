@@ -38,10 +38,15 @@ def scrape():
     tables = pd.read_html(facts_url)
 
     facts_df = tables[0]
-
     facts_df.set_index(0, inplace=True)
-
     facts_df.to_html('mars_facts.html')
+
+    # Read the html to get the body of the table for index.html
+    html_file = open('mars_facts.html' , 'r')
+    table_html = html_file.read() 
+    table_html = table_html.replace('\n', '')
+    body = table_html.find('<tbody>')
+    final_html = table_html[body:]
 
     # Mars Hemispheres
     hemisphere_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -93,7 +98,8 @@ def scrape():
         "news_title": news_title,
         "news_p": news_p,
         "featured_image_url": featured_image_url,
-        "hemisphere_image_urls": hemisphere_image_urls
+        "hemisphere_image_urls": hemisphere_image_urls,
+        "mars_facts": final_html
     }
 
     return mars_data
